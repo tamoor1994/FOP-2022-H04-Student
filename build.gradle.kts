@@ -25,8 +25,11 @@ repositories {
 }
 
 dependencies {
+  // FOPBot available in all source sets
+  implementation("org.sourcegrade:fopbot:0.2.0")
   // JUnit only available in "test" source set (./src/test)
   testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
+
 }
 
 java {
@@ -35,7 +38,7 @@ java {
 }
 
 application {
-  mainClass.set("H04.Main")
+  mainClass.set("h04.Main")
 }
 
 tasks {

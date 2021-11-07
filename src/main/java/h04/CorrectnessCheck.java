@@ -1,4 +1,4 @@
-package H04;
+package h04;
 import fopbot.*;
 
 public class CorrectnessCheck {
