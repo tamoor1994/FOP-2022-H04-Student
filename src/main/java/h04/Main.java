@@ -18,10 +18,10 @@ public class Main {
 
 
     if(ENABLE_CORRCTNESS_CHECK) {
-      robotTests();
-    }else {
       CorrectnessCheck correctnesCheck = new CorrectnessCheck(BASIC_ARRAY_SIZE);
-		  correctnesCheck.run();
+      correctnesCheck.run();
+    }else {
+      robotTests();
     }
   }
 
