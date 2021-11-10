@@ -3,43 +3,33 @@ import fopbot.*;
 
 public class CorrectnessCheck {
 
-  final int BASIC_ARRAY_SIZE;
+  ArrayProducer producer;
+  ArrayTester tester;
+  int arraySize;
 
 
-  public CorrectnessCheck(final int BASIC_ARRAY_SIZE) {
-    this.BASIC_ARRAY_SIZE = BASIC_ARRAY_SIZE;
+  public CorrectnessCheck(ArrayProducer producer, ArrayTester tester, int arraySize) {
+    this.producer = producer;
+    this.tester = tester;
+    this.arraySize = arraySize;
   }
 
   public void run() {
-    init();
-    System.out.println("1. Überprüfung: " + check1());
-    swap();
-    System.out.println("2. Überprüfung: " + check2());
-    System.out.println("3. Überprüfung: " + check3());
+    RobotWithNaturalCoordinatesAndClockDirection[] array1 =  producer.produceArray1(arraySize);
+    RealValuedPoint3D[] array2 = producer.produceArray2(arraySize);
+    WithNaturalCoordinates[] array3 =  producer.produceArray3(array1, array2);
+    WithClockDirection[] array4 = producer.produceArray4(array1);
+
+    System.out.println("Test 1: " + (tester.test1(array3) ? "Working" : "Error"));
+    array3 = tester.swap(array3);
+    System.out.println("Test 2: " + (tester.test2(array3) ? "Working" : "Error"));
+    System.out.println("Test 3: " + (tester.test3(array4) ? "Working" : "Error"));
   }
 
 
-  private void init() {
-    //TODO
-  }
 
-  private boolean check1() {
-    //TODO
-    throw new UnsupportedOperationException("Noch nicht implementiert");
-  }
 
-  private void swap() {
-    //TODO
-  }
 
-  private boolean check2() {
-    //TODO
-    throw new UnsupportedOperationException("Noch nicht implementiert");
-  }
 
-  private boolean check3() {
-    //TODO
-    throw new UnsupportedOperationException("Noch nicht implementiert");
-  }
 
 }
