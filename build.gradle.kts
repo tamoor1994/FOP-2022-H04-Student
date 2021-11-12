@@ -7,7 +7,7 @@ plugins {
 }
 
 submit {
-  assignmentId = "H04" // do not change assignmentId
+  assignmentId = "h04" // do not change assignmentId
   studentId = null // TU-ID  z.B. "ab12cdef"
   firstName = null
   lastName = null
@@ -25,6 +25,8 @@ repositories {
 }
 
 dependencies {
+  // FOPBot available in all source sets
+  implementation("org.sourcegrade:fopbot:0.3.0")
   // JUnit only available in "test" source set (./src/test)
   testImplementation("org.junit.jupiter:junit-jupiter:5.7.2")
 }
@@ -35,7 +37,7 @@ java {
 }
 
 application {
-  mainClass.set("H04.Main")
+  mainClass.set("h04.Main")
 }
 
 tasks {
