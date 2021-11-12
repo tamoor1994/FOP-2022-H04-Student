@@ -18,8 +18,7 @@ public class Main {
 
 
     if(ENABLE_CORRCTNESS_CHECK) {
-      CorrectnessCheck correctnesCheck = new CorrectnessCheck(BASIC_ARRAY_SIZE);
-      correctnesCheck.run();
+      //System.out.println("All tests: " + (new ArrayTesterImpl()).testAll(new ArrayProducerImpl(), BASIC_ARRAY_SIZE)); // einkommentieren für H3
     }else {
       robotTests();
     }
